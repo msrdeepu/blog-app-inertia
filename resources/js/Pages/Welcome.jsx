@@ -1,3 +1,4 @@
+import GuesLayout from "../Layouts/GuestLayout";
 import { Link, Head } from "@inertiajs/react";
 import { Button, Col, Row, Typography } from "antd";
 
@@ -20,3 +21,4 @@ export default function Welcome() {
         </>
     );
 }
+Welcome.layout = (page) => <GuesLayout children={page} />;
