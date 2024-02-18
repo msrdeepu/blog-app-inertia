@@ -1,0 +1,16 @@
+.overlap-top-container {
+    background-color: lightblue;
+    height: auto;
+    margin-top: -6%;
+    z-index: 1;
+    border-radius: 3px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 10px;
+}
+.side-lie-bc {
+    height: 120px;
+    margin: 10px;
+    border-style: solid;
+}

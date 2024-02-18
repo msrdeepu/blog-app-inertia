@@ -1,20 +1,22 @@
-import { Layout, Typography } from "antd";
+import React from "react";
+import "./nav.css";
 
-//navigation bar
-import GuestNav from "./GuestNav";
-
-export default function Guest({ children, showTitle = true }) {
+const GuestLayout = ({ children }) => {
     return (
-        <Layout className="guest-layout">
-            <GuestNav />
-            <Layout.Content>
-                {showTitle && (
-                    <Typography.Title level={2}>
-                        Laravel Inertia Starter App
-                    </Typography.Title>
-                )}
-                <div className="guest-content">{children}</div>
-            </Layout.Content>
-        </Layout>
+        <div>
+            <div className="layout-top-header">
+                <div style={{ color: "white" }}>
+                    <h1>Header</h1>
+                </div>
+            </div>
+            <div className="layout-content-contaier">{children}</div>
+            <div className="layout-footer-item">
+                <div style={{ color: "white" }}>
+                    <h1>Footer</h1>
+                </div>
+            </div>
+        </div>
     );
-}
+};
+
+export default GuestLayout;
