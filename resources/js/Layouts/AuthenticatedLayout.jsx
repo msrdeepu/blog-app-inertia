@@ -8,6 +8,7 @@ import {
     LogoutOutlined,
     DownOutlined,
     UsergroupAddOutlined,
+    FileWordOutlined,
 } from "@ant-design/icons";
 import {
     Col,
@@ -78,6 +79,15 @@ export default function Authenticated({ header, children }) {
                             label: (
                                 <Link href={window.route("dashboard")}>
                                     Dashboard
+                                </Link>
+                            ),
+                        },
+                        {
+                            key: "blogs",
+                            icon: <FileWordOutlined />,
+                            label: (
+                                <Link href={window.route("newblog.index")}>
+                                    Blogs
                                 </Link>
                             ),
                         },
