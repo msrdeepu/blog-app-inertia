@@ -24,7 +24,7 @@ class CreateblogController extends Controller
      */
     public function create()
     {
-        //
+        return Inertia::render('Newblog/CreateBlog');
     }
 
     /**
