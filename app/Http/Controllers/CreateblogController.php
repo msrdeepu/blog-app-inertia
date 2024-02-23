@@ -13,9 +13,12 @@ class CreateblogController extends Controller
      */
     public function index()
     {
+        $blogList = Createblog::get(['*', 'id as key']);
+        // dd($blogList);
         $dataVar = 'Welcome Ramya';
         return Inertia::render('Newblog/BlogList', [
             'ramyaVar' => $dataVar,
+            'allBlogs' => $blogList,
         ]);
     }
 
@@ -24,7 +27,10 @@ class CreateblogController extends Controller
      */
     public function create()
     {
-        return Inertia::render('Newblog/CreateBlog');
+
+        return Inertia::render('Newblog/CreateBlog', [
+            'record' => new Createblog(),
+        ]);
     }
 
     /**
@@ -32,7 +38,12 @@ class CreateblogController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        // dd($request);
+        $requestData = $request->all();
+        $data = Createblog::create($requestData);
+        $data->save();
+
+        return to_route('newblog.index');
     }
 
     /**

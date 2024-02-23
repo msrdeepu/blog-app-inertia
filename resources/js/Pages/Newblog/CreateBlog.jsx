@@ -4,7 +4,7 @@ import { Card, Typography } from "antd";
 import NewBlogForm from "./NewBlogForm";
 
 function CreateBlog(props) {
-    const { data, setData, error } = useForm({
+    const { data, setData, error, post } = useForm({
         posttitle: "",
         author: "",
         date: "",
@@ -14,6 +14,7 @@ function CreateBlog(props) {
 
     const submitHandler = () => {
         console.log(data);
+        post("/blog-store");
     };
     return (
         <>

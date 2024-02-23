@@ -2,7 +2,7 @@ import AuthenticatedLayout from "@/Layouts/AuthenticatedLayout";
 import { Head } from "@inertiajs/react";
 import { Card, Typography, Table, Space, Button } from "antd";
 
-function BlogList({ props, ramyaVar }) {
+function BlogList({ props, ramyaVar, allBlogs }) {
     const dataColums = [
         {
             title: "ID",
@@ -26,6 +26,11 @@ function BlogList({ props, ramyaVar }) {
             key: "status",
         },
         {
+            title: "Created On",
+            dataIndex: "date",
+            key: "date",
+        },
+        {
             title: "Actions",
             render: (_, index) => (
                 <Space>
@@ -38,33 +43,16 @@ function BlogList({ props, ramyaVar }) {
         },
     ];
 
-    const tableData = [
-        {
-            id: 1,
-            posttitle: "Demo",
-            createdby: "Sandeep",
-            status: "Active",
-        },
-        {
-            id: 2,
-            posttitle: "Second Post",
-            createdby: "Ramya",
-            status: "Active",
-        },
-        {
-            id: 3,
-            posttitle: "Third Post",
-            createdby: "Someone",
-            status: "inactive",
-        },
-    ];
+    {
+        console.log(allBlogs);
+    }
 
     return (
         <>
             <Head title="Dashboard" />
 
             <Card title={`Welcome, Sandeep`}>
-                <Table columns={dataColums} dataSource={tableData} />
+                <Table columns={dataColums} dataSource={allBlogs} />
             </Card>
         </>
     );

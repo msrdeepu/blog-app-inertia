@@ -34,6 +34,7 @@ Route::get('/dashboard', function () {
 Route::middleware('auth')->group(function () {
     Route::get('/bloglist', [CreateblogController::class, 'index'])->name('newblog.index');
     Route::get('/create-blog', [CreateblogController::class, 'create'])->name('newblog.create');
+    Route::post('/blog-store', [CreateblogController::class, 'store'])->name('newblog.store');
 
 
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
